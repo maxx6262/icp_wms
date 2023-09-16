@@ -1,0 +1,13 @@
+{
+  "canisters": {
+    "wms": {
+      "main": "src/wms.ts",
+      "type": "custom",
+      "build": "npx azle wms",
+      "root": "src/wms",
+      "ts": "src/wms.ts",
+      "candid": "src/wms.did",
+      "wasm": "azle/wms/wms.wasm.gz"
+    }
+  }
+}

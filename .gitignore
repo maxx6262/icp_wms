@@ -1,0 +1,22 @@
+# Various IED and Editors
+.idea/
+**/*~
+
+# dfx temporary files
+.DS_Store
+**/.DS_Store
+
+# dfx temporary files
+.dfx/
+
+# generated files
+src/declarations/
+
+# frontend code
+node_modules/
+dist/
+
+# environment files
+.env
+.azle
+

@@ -57,14 +57,16 @@ export function addStuff(payload: StuffPayload):Result<Stuff, string> {
 }
 
 $update;
-export function updateStuff(id: string, payload: StuffPayload) {
+export function updateStuff(id: string, payload: StuffPayload): Result<Stuff, string> {
     return match(stuffStorage.get(id), {
         Some: (stuff) => {
             const updatedStuff = {...stuff, ...payload, updatedAt: Opt.Some(ic.time())};
             stuffStorage.insert(id, updatedStuff);
-            Result.Ok<Stuff, string>(updatedStuff);
+            return  Result.Ok<Stuff, string>(updatedStuff);
         },
-        None: () => Result.Err<Stuff, string>(`can't update stuff cause no stuff found with id={$id}.`)
+        None: () => {
+            return Result.Err<Stuff, string>(`can't update stuff cause no stuff found with id={$id}.`);
+        }
     });
 }
 
@@ -88,6 +90,6 @@ globalThis.crypto = {
         for (let i = 0; i < array.length; i++) {
             array[i] = Math.floor(Math.random() * 256)
         }
-        return array
+        return array;
     }
 }

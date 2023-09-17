@@ -7,7 +7,7 @@
       "root": "src/wms",
       "ts": "src/wms.ts",
       "candid": "src/wms.did",
-      "wasm": "azle/wms/wms.wasm.gz"
+      "wasm": ".azle/wms/wms.wasm.gz"
     }
   }
 }

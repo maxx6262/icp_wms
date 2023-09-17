@@ -15,7 +15,6 @@ type Stuff = Record<{
 }>
 
 type StuffPayload = Record<{
-    publicID:       number;
     name:           string;
     description:    string;
     imageURL:       string;
